@@ -1,60 +1,189 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.art {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 10px;
+  position: relative;
+  animation: float 2s infinite ease-in-out;
 }
 
-body {
-  background-color: #1a1a1a;
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-  padding: 40px;
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
-.logo {
-  text-align: center;
-  margin-bottom: 40px;
+/* === NACHOS === */
+.nachos::before,
+.nachos::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 35px solid #f5d76e;
+}
+.nachos::before {
+  top: 0;
+  left: 0;
+  transform: rotate(-15deg);
+}
+.nachos::after {
+  top: 5px;
+  left: 20px;
+  transform: rotate(20deg);
 }
 
-.logo h1 {
-  font-size: 3rem;
-  color: #fff;
+/* === CHICKEN WINGS === */
+.wings::before,
+.wings::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background: #c1440e;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+.wings::before {
+  left: 0;
+  transform: rotate(-30deg);
+}
+.wings::after {
+  right: 0;
+  transform: rotate(30deg);
 }
 
-.logo h2 {
-  color: #f9c900;
-  font-size: 2rem;
+/* === ONION RINGS === */
+.onion::before,
+.onion::after {
+  content: "";
+  position: absolute;
+  border: 5px solid #f39c12;
+  border-radius: 50%;
+}
+.onion::before {
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  left: 10px;
+}
+.onion::after {
+  width: 20px;
+  height: 20px;
+  top: 20px;
+  left: 20px;
 }
 
-.menu-container {
-  display: flex;
-  gap: 40px;
-  justify-content: space-between;
+/* === CAESAR SALAD === */
+.salad::before,
+.salad::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+.salad::before {
+  width: 60px;
+  height: 30px;
+  background: #6ab04c;
+  top: 10px;
+  left: 0;
+}
+.salad::after {
+  width: 20px;
+  height: 20px;
+  background: #f9ca24;
+  top: 20px;
+  left: 20px;
 }
 
-.column {
-  flex: 1;
+/* === BURGERS === */
+.burger::before,
+.burger::after,
+.burger .middle,
+.burger .cheese {
+  content: "";
+  position: absolute;
+  left: 5px;
+  border-radius: 5px;
+}
+.burger::before {
+  width: 50px;
+  height: 15px;
+  background: #d35400;
+  top: 0;
+}
+.burger .middle {
+  width: 50px;
+  height: 10px;
+  background: #5a3e2b;
+  top: 16px;
+}
+.burger .cheese {
+  width: 50px;
+  height: 6px;
+  background: #f6e58d;
+  top: 27px;
+}
+.burger::after {
+  width: 50px;
+  height: 15px;
+  background: #e67e22;
+  top: 35px;
 }
 
-h2 {
-  color: #f9c900;
-  border-bottom: 2px solid #f9c900;
-  margin-bottom: 20px;
-  padding-bottom: 5px;
+/* === DRINKS === */
+.drink::before,
+.drink::after {
+  content: "";
+  position: absolute;
+}
+.drink::before {
+  width: 30px;
+  height: 40px;
+  background: #7ed6df;
+  border-radius: 5px;
+  bottom: 0;
+  left: 15px;
+}
+.drink::after {
+  width: 4px;
+  height: 30px;
+  background: #e056fd;
+  top: 0;
+  left: 28px;
+  transform: rotate(15deg);
 }
 
-.menu-item {
-  margin-bottom: 20px;
+.juice::before {
+  background: #f0932b;
 }
 
-.menu-line {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 500;
-  color: #f9c900;
+/* === DESSERTS === */
+.cake::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 25px;
+  background: #f8c291;
+  top: 20px;
+  left: 5px;
+  border-bottom: 8px solid #d35400;
+  border-radius: 0 0 5px 5px;
+}
+.cake::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: red;
+  border-radius: 50%;
+  top: 8px;
+  left: 24px;
 }
 
-.desc {
-  font-size: 0.9em;
-  color: #ccc;
+.choco::before {
+  background: #6e4b3a;
+  border-bottom: 8px solid #2d3436;
+}
+.choco::after {
+  background: #fff;
 }
